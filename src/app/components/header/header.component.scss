@@ -1,0 +1,38 @@
+@use "./../../../../public/styles/colores.scss";
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: colores.$color-principal;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-right: 750px;
+    // margin-top: 20px;
+    // margin-bottom: 20px;
+    padding: 20px;
+}
+
+.active{
+    color: colores.$color-principal;
+}
+
+nav{
+    display: flex;
+    align-content: space-between;
+    justify-content: flex-end;
+    background-color: rgb(58, 58, 58);
+    align-items: center;
+
+}
+
+nav a{
+    margin: 20px;
+    font-size: 20px;
+    display: flex;
+
+}
+
+header{
+    background-color: rgb(58, 58, 58);
+    display: flex;
+    align-content: space-between;
+}

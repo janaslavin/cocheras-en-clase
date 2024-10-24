@@ -1,0 +1,35 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<div id="container">
+    
+
+    <main>
+        <h1>PARKING APP</h1>
+        <form>
+            <div id="usuario">
+                <input type="text" [(ngModel)]="datosLogin.username" name="usuario" placeholder="Usuario">
+                <i class='bx bxs-user'></i>
+            </div>
+            
+            <div id="contraseña">
+                <input type="password" name="Contraseña" id="" [(ngModel)]="datosLogin.password" name="password" placeholder="Contraseña">
+                <i class='bx bx-hide' ></i>
+            </div>
+            <div id="recuerdame">
+                <input type="checkbox" name="Recuerdame" id="">
+                <p>Recuerdame</p>
+            </div>
+           
+            <button type="button" class="iniciar-sesion" (click)="Login()">Iniciar sesión</button>
+            <div>
+                <p>¿Todavía no tienes una cuenta? Hazlo ahora!</p>
+                <a [routerLink]="['/estado-cocheras']">Registrarse</a>
+            </div>
+
+        </form>
+
+
+
+    
+    </main>
+</div>

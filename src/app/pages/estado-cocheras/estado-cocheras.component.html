@@ -1,0 +1,163 @@
+<app-header></app-header>
+
+<!-- <h1>Estado cocheras</h1> -->
+
+
+<!-- <header>
+    <div>
+        <p>PARKING APP</p>
+    </div>
+    <nav>
+        <a href="">ESTADO DE COCHERAS</a>
+        <button>
+            <img src="" alt="">
+        </button>
+    </nav>
+</header> --> 
+
+<!-- <table>
+    <thead>
+        <td>Nro</td>
+        <td>Disponibilidad</td>
+        <td>Ingreso</td>
+        <td>Acciones</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+<main>
+    <!-- <div id="tabla">
+        <div id="header-tabla">
+            <div>Nro</div>
+            <div>Disponibilidad</div>
+            <div>Ingreso</div>
+            <div>Acciones</div>
+        </div>
+        <div>
+            <div>1</div>
+            <div class="ocupado">
+                <p>AXX-246</p>
+            </div>
+            <div>01/01 10:43</div>
+            <div></div>
+        </div>
+        <div>
+            <div>2</div>
+            <div class="disponible">
+                <p>Disponible</p>
+            </div>
+            <div>-</div>
+            <div></div>
+        </div>
+        <div>
+            <div>3</div>
+            <div class="disponible">
+                <p>Disponible</p>
+            </div>
+            <div>-</div>
+            <div></div>
+        </div>
+        <div>
+            <div>4</div>
+            <div class="deshabilitado">
+                <p>Deshabilitado</p>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div>5</div>
+            <div class="ocupado">
+                <p>AB-1274-CD</p>
+            </div>
+            <div>10:45 1+</div>
+            <div></div>
+        </div>
+        <div>
+            <div>6</div>
+            <div class="disponible">
+                <p>Disponible</p>
+            </div>
+            <div>-</div>
+            <div></div>
+        </div>
+        <div>
+            <div>7</div>
+            <div class="deshabilitado">
+                <p>Deshabilitado</p>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div>8</div>
+            <div class="ocupado">
+                <p>AXX-246</p>
+            </div>
+            <div>10:45 1+</div>
+            <div></div>
+        </div>
+
+    </div> -->
+
+    <a [routerLink]="['/login']" >Cerrar sesión</a> 
+
+    <div id="tabla">
+        <div id="header-tabla">
+            <div>{{ header.nro }}</div>
+            <div>{{ header.disponibilidad }}</div>
+            <div>{{ header.ingreso }}</div>
+            <div>{{ header.acciones}}</div>
+        </div>
+        @for (fila of filas; track $index) {
+            <button (click)="abrirModalNuevoEstacionamiento(fila.id)" [disabled]="fila.deshabilitada || fila.activo">
+                <div>{{ fila.id }}</div>
+                <div>  
+                    @if(fila.activo){
+                        <p>{{fila.activo.patente}}</p>
+                    } @else {
+                        <p [ngClass]="{disponible: !fila.deshabilitada, ocupado: fila.deshabilitada}">{{ fila.deshabilitada ? ' No disponible' : 'Disponible'}}</p>
+                    }
+                </div>
+                <div>{{ fila.descripcion }}</div>
+                <div class="acciones-container">
+                    <button (click)="cambiarDisponibilidadCocheras(fila.id, $event)"><img src="img/logo prohibido.png" alt="prohibido" width="30px"></button>
+                    <!-- <button (click)="borrarFila($index)"><img src="img/logo eliminar.png" alt="borrar fila" width="30px"></button> -->
+                    <button (click)="showModal(fila.id, $event)"><img src="img/logo eliminar.png" alt="borrar fila" width="30px"></button> 
+                                   
+                </div>
+            </button>
+        }
+
+    </div>
+    <div>
+        <button (click)="agregarFila()" class="boton-resaltado">Agregar fila</button>
+        <button (click)="traerCocheras()">Get Cocheras</button>
+    </div>
+</main>
