@@ -31,7 +31,7 @@ import { Cochera } from "../interfaces/cochera";
         }
         
           deshabilitar(cochera: Cochera) {
-            if (!cochera.deshabilitada) return Promise.resolve();
+            if (cochera.deshabilitada) return Promise.resolve();
         
             return fetch(`http://localhost:4000/cocheras/${cochera.id}/disable`, {
                 method: 'POST',

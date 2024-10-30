@@ -89,3 +89,16 @@ main{
     background-repeat: no-repeat;
     min-height: 650px;
 }
+
+.acciones-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.acciones-container img{
+    display: block;
+    
+}
