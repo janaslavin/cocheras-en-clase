@@ -9,7 +9,6 @@ h1{
     display: flex;
     flex-direction: column;
     margin: 120px;
-    padding-top: 50px;
     margin-top: 0px;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -20,12 +19,14 @@ h1{
         background-color: colores.$color-principal;
         padding-top: 20px;
         padding-bottom: 20px;
+        height: 40px;
     }
     >div, button{
         display: grid;
         grid-template-columns: 100px 1fr 1fr 1fr;
         border-bottom: 1px solid rgb(73, 73, 73);
         align-items: center;
+        height: 60px;
     }
     >button:disabled{
         background-color: rgba(255, 255, 255, 0.766);
@@ -38,7 +39,6 @@ h1{
         width: fit-content;
         margin: 10px auto;
         border-radius: 3px;
-        // height: 20px;
         text-align: center;
         padding: 10px 20px;
     }
@@ -47,7 +47,6 @@ h1{
         width: fit-content;
         margin: 10px auto;
         border-radius: 3px;
-        // height: 20px;
         text-align: center;
         padding: 10px 20px;
     }
@@ -55,7 +54,6 @@ h1{
         width: fit-content;
         margin: 10px auto;
         border-radius: 3px;
-        // height: 20px;
         text-align: center;
         padding: 10px 20px;
     }
@@ -94,11 +92,11 @@ h1{
 
 main{
     background-image: url(https://img.freepik.com/vector-premium/caricatura-garaje-coche-camion-bomberos-fondo_889056-209718.jpg);
-    // url(https://img.freepik.com/vector-premium/captura-pantalla-juego-palabras-juego-pared_889056-209433.jpg?w=360);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 650px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 50px;
 }
 
 .acciones-container{

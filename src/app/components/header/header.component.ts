@@ -22,19 +22,7 @@ export class HeaderComponent {
 }
 
 };
-  // resultadoInput: string = "";
-
-  // abrirModal(){
-  //   Swal.fire({
-  //     title: "Enter your IP address",
-  //     input: "text",
-  //     inputLabel: "Your IP address",
-  //     inputValue: "",
-  //     showCancelButton: true,
-  //   }).then((result)=> {
-  //     this.resultadoInput = result.value;
-  //   })
-  // }
+  
 
 
 

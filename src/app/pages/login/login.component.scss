@@ -8,14 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // &::after{
-    //     content: '';
-    //     position: relative;
-    //     background-color: rgba(244, 242, 242, 0.4);
-    //     left: 0;
-    //     right: 0;
-    //     height: 100%;
-    // }
+    
 }
 
 form{
@@ -49,7 +42,7 @@ form input{
 }
 
 h1{
-    color: rgb(227, 111, 21);
+    color: colores.$color-principal;
     font-size: 65px;
     text-shadow: rgba(0, 0, 0, 0.7) 2px 2px 4px;
     font-weight: bold;
@@ -69,11 +62,17 @@ a{
 .iniciar-sesion{
     text-decoration: none;
     color: white;
-    background-color: rgb(227, 111, 21);
+    background-color: colores.$color-principal;
     padding: 10px;
     border-radius: 15px;
     margin-bottom: 25px;
-    margin-top: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+
+.iniciar-sesion:hover{
+    background-color: rgb(173, 75, 0);
 }
 
 p{
@@ -116,6 +115,7 @@ p{
 #recuerdame{
     display: flex;
     transform: translateX(-50%);
+    margin-top: 30px;
 }
 
 #recuerdame p{

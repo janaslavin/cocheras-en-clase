@@ -10,7 +10,7 @@
         </div>
         @for (reporte of reportes; track $index) {
             <div>
-                <div>{{ $index }}</div>
+                <div>{{ $index+1 }}</div>
                 <div>{{ reporte.mes }}</div>
                 <div>{{ reporte.usos }}</div>
                 <div>{{ reporte.cobrados }}</div>

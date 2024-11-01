@@ -16,16 +16,7 @@ import { EstacionamientosService } from '../../services/estacionamientos.service
   styleUrl: './estado-cocheras.component.scss'
 })
 export class EstadoCocherasComponent {
-  //  else
-  //    this.cocheras.deshabilitar(cochera).then(()=> this.traerCocheras());
-  //  };
-  // cambiarDisponibilidadCocheras(numeroFila: number){
-  //   if (this.filas[numeroFila].deshabilitada === true){
-  //     this.filas[numeroFila].deshabilitada = false;
-  //   }else {
-  //     this.filas[numeroFila].deshabilitada = true;
-  //   }
-  // }
+ 
 
 
   titulo: string = "Estado de la cochera";
@@ -103,18 +94,7 @@ export class EstadoCocherasComponent {
   }
 
 
-  /** Cambia la disponibilidad de una cochera, si esta habilitada se deshabilita, y viceversa */
-
-  // cambiarDisponibilidadCocheras(cocheraId: number, habilitada: boolean){
-
-  // manera larga
-  // if(this.filas[numeroFila].disponibilidad === true){
-  //   this.filas[numeroFila].disponibilidad = false;
-  // } else {
-  //   this.filas[numeroFila].disponibilidad = true;
-  // this.filas[numeroFila].deshabilitada = !this.filas[numeroFila].deshabilitada;
-
-  // const cochera = this.filas.find(cochera => cochera.id === cocheraId)!;
+  
 
   cambiarDisponibilidadCocheras(cocheraId: number, event:Event) {
     event.stopPropagation();
@@ -128,24 +108,12 @@ export class EstadoCocherasComponent {
   }
 
   ;
-  //  if (cochera.deshabilitada)
-  //   this.cocheras.habilitar(cochera).then(()=> this.traerCocheras());
-  //  else
-  //    this.cocheras.deshabilitar(cochera).then(()=> this.traerCocheras());
-  //  };
-
-  // cambiarDisponibilidadCocheras(numeroFila: number){
-  //   if (this.filas[numeroFila].deshabilitada === true){
-  //     this.filas[numeroFila].deshabilitada = false;
-  //   }else {
-  //     this.filas[numeroFila].deshabilitada = true;
-  //   }
-  // }
+  
 
   showModal(indice: number, event:Event) {
     event.stopPropagation();
     Swal.fire({
-      title: "Seguro que quieres borrar la fila?",
+      title: "Seguro que quieres borrar la cochera?",
       text: "Una vez hecho no hay vuelta atrás!",
       icon: "warning",
       showCancelButton: true,
@@ -156,7 +124,7 @@ export class EstadoCocherasComponent {
       if (result.isConfirmed) {
         Swal.fire({
           title: "Listo!",
-          text: "La fila fue eliminada con éxito.",
+          text: "La cochera fue eliminada con éxito.",
           icon: "success"
         });
         this.borrarFila(indice);
@@ -164,14 +132,7 @@ export class EstadoCocherasComponent {
     });
   }
 
-  /** obtener las cocheras del back end */
-  // getCocheras(){
-  //   fetch("http://localhost:4000/cocheras", {
-  //     headers:{
-  //       authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXNBZG1pbiI6MSwiaWF0IjoxNzI2NjcwODE0LCJleHAiOjE3MjcyNzU2MTR9.5_phgc5GM8d9i8Jks8urEViOmVcQ3FK6wSGYnOpzCik'
-  //     },
-  //   });
-  // }
+  
 
   async abrirModalNuevoEstacionamiento(idCochera: number) {
     await Swal.fire({

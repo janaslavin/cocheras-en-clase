@@ -48,7 +48,7 @@ estacionarAuto(patenteAuto: string, idCochera: number) {
   }
 
   cerrarEstacionamiento(patenteAuto: string, cocheraId: number) {
-    return fetch("http://localhost:4000/estacionamientos/cerrar", { // Verifica que el URL incluya http:// o https://
+    return fetch("http://localhost:4000/estacionamientos/cerrar", { 
       method: "PATCH",
       headers: {
         Authorization: "Bearer " + (this.auth.getToken() ?? ""),

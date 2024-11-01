@@ -38,8 +38,5 @@ export const routes: Routes = [
         redirectTo: "login",
         pathMatch: "full"
     },
-    {
-        path: "precios",
-        component: PreciosComponent,
-    },
+    
 ];

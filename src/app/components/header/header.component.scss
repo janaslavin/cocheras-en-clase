@@ -6,8 +6,6 @@ h1{
     color: colores.$color-principal;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-right: 750px;
-    // margin-top: 20px;
-    // margin-bottom: 20px;
     padding: 20px;
 }
 
@@ -21,13 +19,15 @@ nav{
     justify-content: flex-end;
     background-color: rgb(58, 58, 58);
     align-items: center;
+    margin-right: 0px;
 
 }
 
 nav a{
     margin: 18px;
-    font-size: 20px;
+    font-size: 23px;
     display: flex;
+    align-content: space-between;
 
 }
 
@@ -35,5 +35,14 @@ header{
     background-color: rgb(58, 58, 58);
     display: flex;
     align-content: space-between;
+    justify-content: space-between;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button{
+    cursor: pointer;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 0px;
+    margin-right: 25px;
 }
