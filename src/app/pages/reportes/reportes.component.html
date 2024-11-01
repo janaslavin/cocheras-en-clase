@@ -1,20 +1,23 @@
 <app-header></app-header>
 
-<div id="tabla">
-    <div id="header-tabla">
-        <div>{{ header.nro }}</div>
-        <div>{{ header.mes }}</div>
-        <div>{{ header.usos }}</div>
-        <div>{{ header.cobrado}}</div>
-    </div>
-    @for (reporte of reportes; track $index) {
-        <div>
-            <div>{{ $index }}</div>
-            <div>{{ reporte.mes }}</div>
-            <div>{{ reporte.usos }}</div>
-            <div>{{ reporte.cobrados }}</div>
-
+<main>
+    <div id="tabla">
+        <div id="header-tabla">
+            <div>{{ header.nro }}</div>
+            <div>{{ header.mes }}</div>
+            <div>{{ header.usos }}</div>
+            <div>{{ header.cobrado}}</div>
         </div>
-    }
+        @for (reporte of reportes; track $index) {
+            <div>
+                <div>{{ $index }}</div>
+                <div>{{ reporte.mes }}</div>
+                <div>{{ reporte.usos }}</div>
+                <div>{{ reporte.cobrados }}</div>
+    
+            </div>
+        }
+    
+    </div>  
+</main>
 
-</div> 
