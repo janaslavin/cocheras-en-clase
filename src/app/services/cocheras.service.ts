@@ -40,6 +40,17 @@ import { Cochera } from "../interfaces/cochera";
                 }
             })
         }
+
+        getCocherasById(id: number){
+            return fetch(`http://localhost:4000/cocheras/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${this.auth.getToken()}`
+                }
+            }).then(r => r.json());
+        }
+
+        
     }
  
 

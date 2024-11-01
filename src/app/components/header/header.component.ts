@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,15 @@ import Swal from 'sweetalert2';
 export class HeaderComponent {
   esAdmin: boolean = true;
 
+  auth = inject(AuthService);
+  router = inject(Router);
+
+  logout() {// llama al auth service para hacer logout
+    this.auth.logout();
+    this.router.navigate(['/login']);  // redirige a la página de login
+}
+
+};
   // resultadoInput: string = "";
 
   // abrirModal(){
@@ -26,6 +36,6 @@ export class HeaderComponent {
   //   })
   // }
 
-}
+
 
 

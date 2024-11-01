@@ -126,7 +126,7 @@
 
     </div> -->
 
-    <a [routerLink]="['/login']" >Cerrar sesión</a> 
+
 
     <div id="tabla">
         <div id="header-tabla">
@@ -140,12 +140,12 @@
                 <div>{{ fila.id }}</div>
                 <div>  
                     @if(fila.activo){
-                        <p>{{fila.activo.patente}}</p>
+                        <p class="patente-activa" (click)="cerrarModalEstacionamiento(fila.id, fila.activo.patente)">{{fila.activo.patente}}</p>
                     } @else {
                         <p [ngClass]="{disponible: !fila.deshabilitada, ocupado: fila.deshabilitada}">{{ fila.deshabilitada ? ' No disponible' : 'Disponible'}}</p>
                     }
                 </div>
-                <div>{{ fila.descripcion }}</div>
+                <div>{{ fila.activo ?.horaIngreso }}</div>
                 <div class="acciones-container">
                     <button (click)="cambiarDisponibilidadCocheras(fila.id, $event)"><img src="img/logo prohibido.png" alt="prohibido" width="30px"></button>
                     <!-- <button (click)="borrarFila($index)"><img src="img/logo eliminar.png" alt="borrar fila" width="30px"></button> -->
@@ -157,7 +157,7 @@
 
     </div>
     <div>
-        <button (click)="agregarFila()" class="boton-resaltado">Agregar fila</button>
-        <button (click)="traerCocheras()">Get Cocheras</button>
+        <button (click)="agregarFila()" class="boton-resaltado">Agregar cochera</button>
+        
     </div>
 </main>

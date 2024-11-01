@@ -3,9 +3,9 @@ export interface Estacionamiento {
     patente: string;
     horaIngreso: string;
     horaEgreso: string|null;
-    costo: number|null;
+    costo: number;
     idUsuarioIngreso: string;
     idUsuarioEgreso: string|null;
     idCochera: number;
-    eliminado: null;
+    eliminado?: null;
 }

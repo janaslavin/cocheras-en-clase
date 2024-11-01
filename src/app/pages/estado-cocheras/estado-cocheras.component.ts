@@ -194,6 +194,39 @@ export class EstadoCocherasComponent {
     })
   }
 
+  cerrarModalEstacionamiento(idCochera: number, patente: string) {
+    Swal.fire({
+      title: '¿Deseas cerrar el estacionamiento?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cerrar'
+    }).then((res) => {
+      if (res.isConfirmed) {
+        this.estacionamientos.cerrarEstacionamiento(patente, idCochera)
+          .then((r) => {
+            if (!r.ok) throw new Error("Error en la respuesta del servidor"); // Maneja respuestas no OK
+            return r.json(); // Convertimos a JSON
+          })
+          .then((rJson) => {
+            const costo = rJson.costo;
+            this.traerCocheras();
+            Swal.fire({
+              title: 'La cochera ha sido cerrada',
+              text: `El precio a cobrar es ${costo}`,
+              icon: 'info'
+            });
+          });
+      } else if (res.dismiss) {
+        Swal.fire({
+          title: 'Cancelado',
+          text: 'La cochera no ha sido cerrada.',
+          icon: 'info'
+        });
+      }
+    });
+  }
   
 
 }

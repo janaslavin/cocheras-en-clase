@@ -7,6 +7,7 @@ import { Cochera } from '../interfaces/cochera';
 })
 export class AuthService {
 
+
   getToken(): string {
     return localStorage.getItem('token') ?? '';
   }
@@ -44,5 +45,9 @@ export class AuthService {
         }
   })
 })
+  }
+
+  logout(): void { //funcion de logout
+    localStorage.removeItem("token"); 
   }
 }

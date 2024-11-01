@@ -1,24 +1,20 @@
 <app-header></app-header>
 
-<!-- <div id="tabla">
+<div id="tabla">
     <div id="header-tabla">
         <div>{{ header.nro }}</div>
         <div>{{ header.mes }}</div>
         <div>{{ header.usos }}</div>
         <div>{{ header.cobrado}}</div>
     </div>
-    @for (fila of filas; track $index) {
+    @for (reporte of reportes; track $index) {
         <div>
-            < <div>{{ fila.id }}</div>
-            <div><p [ngClass]="{disponible: !fila.deshabilitada, ocupado: fila.deshabilitada}">{{ fila.deshabilitada ? ' No disponible' : 'Disponible'}}</p></div>
-            <div>{{ fila.descripcion }}</div>
-            <div class="acciones-container">
-                <button (click)="cambiarDisponibilidadCocheras($index)"><img src="img/logo prohibido.png" alt="prohibido" width="30px"></button>
-                < <button (click)="borrarFila($index)"><img src="img/logo eliminar.png" alt="borrar fila" width="30px"></button> -->
-                <!-- <button (click)="showModal(fila.id)"><img src="img/logo eliminar.png" alt="borrar fila" width="30px"></button>  --> 
-                               
-            <!-- </div>
+            <div>{{ $index }}</div>
+            <div>{{ reporte.mes }}</div>
+            <div>{{ reporte.usos }}</div>
+            <div>{{ reporte.cobrados }}</div>
+
         </div>
     }
 
-</div> --> 
+</div> 
