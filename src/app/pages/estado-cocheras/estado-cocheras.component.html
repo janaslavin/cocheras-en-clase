@@ -73,7 +73,10 @@
                 </div>
                 <div>{{ fila.activo ?.horaIngreso }}</div>
                 <div class="acciones-container">
-                    <button class="acciones" (click)="cambiarDisponibilidadCocheras(fila.id, $event)"> <i class='bx bx-transfer bx-rotate-180' ></i></button>
+                    <button class="acciones" (click)="cambiarDisponibilidadCocheras(fila.id, $event)">
+                        <i *ngIf="fila.deshabilitada" class='bx bx-check-circle'></i>
+                        <i *ngIf="!fila.deshabilitada" class='bx bx-x-circle'></i>
+                    </button>
                     <button class="acciones" (click)="showModal(fila.id, $event)"> <i class='bx bx-trash' ></i> </button> 
                                    
                 </div>
